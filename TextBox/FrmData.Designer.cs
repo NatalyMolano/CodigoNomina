@@ -45,13 +45,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txttotal = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.txtPension = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtHealth = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtIncome = new System.Windows.Forms.TextBox();
             this.dgvdata = new System.Windows.Forms.DataGridView();
             this.tsmMenu = new System.Windows.Forms.ToolStrip();
             this.tslRegistrar = new System.Windows.Forms.ToolStripLabel();
@@ -60,6 +57,8 @@
             this.tslSalir = new System.Windows.Forms.ToolStripLabel();
             this.tslacercade = new System.Windows.Forms.ToolStripLabel();
             this.erpError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTotalIncome = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.tsmMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.erpError)).BeginInit();
@@ -197,7 +196,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(419, 389);
+            this.label5.Location = new System.Drawing.Point(48, 472);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 15);
             this.label5.TabIndex = 14;
@@ -205,7 +204,7 @@
             // 
             // txttotal
             // 
-            this.txttotal.Location = new System.Drawing.Point(544, 386);
+            this.txttotal.Location = new System.Drawing.Point(173, 469);
             this.txttotal.Name = "txttotal";
             this.txttotal.ShortcutsEnabled = false;
             this.txttotal.Size = new System.Drawing.Size(215, 23);
@@ -214,7 +213,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(419, 426);
+            this.button3.Location = new System.Drawing.Point(48, 540);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(118, 23);
             this.button3.TabIndex = 16;
@@ -222,19 +221,9 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(549, 429);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 17;
-            this.button4.Text = "Exit";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // txtPension
             // 
-            this.txtPension.Location = new System.Drawing.Point(544, 353);
+            this.txtPension.Location = new System.Drawing.Point(173, 436);
             this.txtPension.Name = "txtPension";
             this.txtPension.ShortcutsEnabled = false;
             this.txtPension.Size = new System.Drawing.Size(215, 23);
@@ -244,7 +233,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(419, 355);
+            this.label6.Location = new System.Drawing.Point(48, 438);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 15);
             this.label6.TabIndex = 18;
@@ -253,7 +242,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(419, 327);
+            this.label7.Location = new System.Drawing.Point(48, 410);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 15);
             this.label7.TabIndex = 20;
@@ -262,30 +251,12 @@
             // 
             // txtHealth
             // 
-            this.txtHealth.Location = new System.Drawing.Point(544, 324);
+            this.txtHealth.Location = new System.Drawing.Point(173, 407);
             this.txtHealth.Name = "txtHealth";
             this.txtHealth.ShortcutsEnabled = false;
             this.txtHealth.Size = new System.Drawing.Size(215, 23);
             this.txtHealth.TabIndex = 21;
             this.txtHealth.TextChanged += new System.EventHandler(this.txtHealth_TextChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(419, 298);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 15);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Total_Income";
-            // 
-            // txtIncome
-            // 
-            this.txtIncome.Location = new System.Drawing.Point(544, 295);
-            this.txtIncome.Name = "txtIncome";
-            this.txtIncome.ShortcutsEnabled = false;
-            this.txtIncome.Size = new System.Drawing.Size(215, 23);
-            this.txtIncome.TabIndex = 23;
-            this.txtIncome.TextChanged += new System.EventHandler(this.txtIncome_TextChanged);
             // 
             // dgvdata
             // 
@@ -293,7 +264,7 @@
             this.dgvdata.Location = new System.Drawing.Point(419, 103);
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.RowTemplate.Height = 25;
-            this.dgvdata.Size = new System.Drawing.Size(568, 179);
+            this.dgvdata.Size = new System.Drawing.Size(568, 427);
             this.dgvdata.TabIndex = 24;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
             // 
@@ -353,20 +324,37 @@
             // 
             this.erpError.ContainerControl = this;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(48, 504);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 15);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Total_income";
+            // 
+            // txtTotalIncome
+            // 
+            this.txtTotalIncome.Location = new System.Drawing.Point(173, 504);
+            this.txtTotalIncome.Name = "txtTotalIncome";
+            this.txtTotalIncome.ShortcutsEnabled = false;
+            this.txtTotalIncome.Size = new System.Drawing.Size(215, 23);
+            this.txtTotalIncome.TabIndex = 27;
+            this.txtTotalIncome.TextChanged += new System.EventHandler(this.txtTotalIncome_TextChanged);
+            // 
             // FrmData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(999, 469);
+            this.ClientSize = new System.Drawing.Size(999, 575);
+            this.Controls.Add(this.txtTotalIncome);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.tsmMenu);
             this.Controls.Add(this.dgvdata);
-            this.Controls.Add(this.txtIncome);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.txtHealth);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtPension);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.txttotal);
             this.Controls.Add(this.label5);
@@ -413,13 +401,10 @@
         private Label label5;
         private System.Windows.Forms.TextBox txttotal;
         private Button button3;
-        private Button button4;
         private System.Windows.Forms.TextBox txtPension;
         private Label label6;
         private Label label7;
         private System.Windows.Forms.TextBox txtHealth;
-        private Label label8;
-        private System.Windows.Forms.TextBox txtIncome;
         private DataGridView dgvdata;
         private ToolStrip tsmMenu;
         private ToolStripLabel tslRegistrar;
@@ -428,5 +413,7 @@
         private ToolStripLabel tslSalir;
         private ToolStripLabel tslacercade;
         private ErrorProvider erpError;
+        private System.Windows.Forms.TextBox txtTotalIncome;
+        private Label label3;
     }
 }

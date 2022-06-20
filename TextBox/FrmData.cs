@@ -4,7 +4,8 @@ namespace TextBox
     {
         List<Clslista> MiLista = new List<Clslista>();
         Clslista myempleado = new Clslista();
-        Nomina mynomina = new Nomina();
+        
+        
         public FrmData()
         {
             InitializeComponent();
@@ -88,7 +89,7 @@ namespace TextBox
             myempleado.FirstName1 = textBoxfirstName.Text;
             myempleado.LastName1 = textBoxLastName.Text;
             myempleado.Salary1 = Convert.ToDouble(textBoxSalary.Text);
-            mynomina.WorkDays1 = Convert.ToInt32(textBoxWorkDays.Text);
+            myempleado.WorkDays1 = Convert.ToInt32(textBoxWorkDays.Text);
 
             MessageBox.Show("The record was saved successfully");
 
@@ -107,15 +108,15 @@ namespace TextBox
 
         private void button2_Click(object sender, EventArgs e)
         {
-            txtIncome.Text = mynomina.Total(Convert.ToDouble(myempleado.Salary1)).ToString();
-            txttotal.Text = mynomina.CalculatePayroll(Convert.ToInt32(mynomina.WorkDays1), Convert.ToDouble(myempleado.Salary1)).ToString();
-            txtHealth.Text = mynomina.Salud(Convert.ToInt32(mynomina.WorkDays1), Convert.ToDouble(myempleado.Salary1)).ToString();
-            txtPension.Text = mynomina.Pension1(Convert.ToInt32(mynomina.WorkDays1), Convert.ToDouble(myempleado.Salary1)).ToString();
+            txtTotalIncome.Text = myempleado.Total(Convert.ToDouble(myempleado.Salary1)).ToString();
+            txttotal.Text = myempleado.CalculatePayroll(Convert.ToInt32(myempleado.WorkDays1), Convert.ToDouble(myempleado.Total_income1)).ToString();
+            txtHealth.Text = myempleado.Salud(Convert.ToInt32(myempleado.WorkDays1), Convert.ToDouble(myempleado.Salary1)).ToString();
+            txtPension.Text = myempleado.pension(Convert.ToInt32(myempleado.WorkDays1), Convert.ToDouble(myempleado.Salary1)).ToString();
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            txtIncome.Clear();
             textBoxfirstName.Clear();
             textBoxDoment.Clear();
             textBoxfirstName.Clear();
@@ -125,6 +126,7 @@ namespace TextBox
             txtHealth.Clear();
             txtPension.Clear();
             textBoxLastName.Clear();
+            txtTotalIncome.Clear();
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -185,6 +187,13 @@ namespace TextBox
             miempleado.Document1 = double.Parse(textBoxDoment.Text);
             miempleado.Salary1 = double.Parse(textBoxSalary.Text);
             miempleado.WorkDays1 = int.Parse(textBoxWorkDays.Text);
+            miempleado.Devengo1 = double.Parse(txttotal.Text);
+            miempleado.Health1 = double.Parse(txtHealth.Text);
+            miempleado.Pension1 = double.Parse(txtPension.Text);
+            miempleado.Total_income1 = double.Parse(txtTotalIncome.Text);
+
+            //miempleado.Pension1 = double.Parse(txtPension.Text);
+            
             MiLista.Add(miempleado);
             dgvdata.DataSource = null;
             dgvdata.DataSource = MiLista;
@@ -285,6 +294,10 @@ namespace TextBox
             textBoxLastName.Clear();
             textBoxSalary.Clear();
             textBoxWorkDays.Clear();
+            txtHealth.Clear();
+            txtPension.Clear();
+            textBoxLastName.Clear();
+            txttotal.Clear();
         }
 
         private void tslConsultar_Click(object sender, EventArgs e)
@@ -308,6 +321,9 @@ namespace TextBox
                 textBoxSalary.Text = miEmpleado.Salary1.ToString();
                 textBoxWorkDays.Text = miEmpleado.WorkDays1.ToString();
                 textBoxDoment.Text = miEmpleado.Document1.ToString();
+                txttotal.Text = miEmpleado.Devengo1.ToString();
+                txtHealth.Text = miEmpleado.Health1.ToString();
+                txtPension.Text = miEmpleado.Pension1.ToString();
                 tslEliminar.Enabled= true;
             }
         }
@@ -315,6 +331,11 @@ namespace TextBox
         private Clslista GetEmpleado(string nombre)
         {
             return MiLista.Find(empleado => empleado.FirstName1.Contains(nombre));
+        }
+
+        private void txtTotalIncome_TextChanged(object sender, EventArgs e)
+        {
+
         }
         //Metodo consultar empleado
 
