@@ -21,7 +21,7 @@ namespace TextBox
         public double Total(double salary)
         {
 
-            Employee myemployee = new Employee();
+            
             if (salary <= 2_000_000)
             {
                 Total_income1 = salary + 117_172;

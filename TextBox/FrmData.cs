@@ -298,6 +298,7 @@ namespace TextBox
             txtPension.Clear();
             textBoxLastName.Clear();
             txttotal.Clear();
+            txtTotalIncome.Clear();
         }
 
         private void tslConsultar_Click(object sender, EventArgs e)
@@ -324,6 +325,7 @@ namespace TextBox
                 txttotal.Text = miEmpleado.Devengo1.ToString();
                 txtHealth.Text = miEmpleado.Health1.ToString();
                 txtPension.Text = miEmpleado.Pension1.ToString();
+                txtTotalIncome.Text = miEmpleado.Total_income1.ToString();
                 tslEliminar.Enabled= true;
             }
         }
